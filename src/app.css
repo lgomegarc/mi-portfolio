@@ -1,2 +1,51 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+/* src/app.css */
+
+/* 1. DIRECTIVAS DE TAILWIND (NO deben ser modificadas) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. FUENTES (@import url) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* 3. ESTILOS GLOBALES (SIN @apply) */
+
+/* Aplica la fuente Poppins, color de texto y fondo (Sustituye @apply text-gray-700 bg-white;) */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #4b5563; /* text-gray-700 */
+    background-color: #ffffff; /* bg-white */
+}
+
+/* Definición manual de .container (Sustituye @apply) */
+.container {
+    /* mx-auto max-w-7xl px-4 */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px; /* max-w-7xl */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+/* sm:px-6 (Media query manual) */
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem; /* px-6 */
+        padding-right: 1.5rem; /* px-6 */
+    }
+}
+
+/* lg:px-8 (Media query manual) */
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 2rem; /* px-8 */
+        padding-right: 2rem; /* px-8 */
+    }
+}
+
+/* Estilos de accesibilidad para focus */
+:focus-visible {
+    outline: 2px solid #5a5edc; /* primary */
+    outline-offset: 3px;
+    border-radius: 4px;
+}

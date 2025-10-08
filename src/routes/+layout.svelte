@@ -1,12 +1,16 @@
-<script lang="ts">
-	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
-
-	let { children } = $props();
+<script>
+    // 🔑 CLAVE: Esta importación le dice a SvelteKit/Vite que inyecte el CSS compilado.
+    import '../app.css'; 
+    import Navbar from '$lib/components/Navbar.svelte';
+    import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
-{@render children?.()}
+<div class="min-h-screen flex flex-col">
+    <Navbar />
+    
+    <main class="flex-grow">
+        <slot />
+    </main>
+    
+    <Footer />
+</div>
