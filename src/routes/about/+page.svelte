@@ -1,64 +1,66 @@
 <script>
-    // Define tus habilidades y el nivel de cada una
-    const skills = [
-        { name: 'Svelte/SvelteKit', level: 'Experto', icon: 'fa-solid fa-code' },
-        { name: 'Tailwind CSS', level: 'Avanzado', icon: 'fa-solid fa-paintbrush' },
-        { name: 'Node.js/Express', level: 'Intermedio', icon: 'fa-brands fa-node-js' },
-        { name: 'Bases de Datos (MongoDB)', level: 'Intermedio', icon: 'fa-solid fa-database' },
-        { name: 'TypeScript', level: 'Avanzado', icon: 'fa-brands fa-js' },
-        { name: 'RESTful APIs', level: 'Experto', icon: 'fa-solid fa-server' },
+    // Lista de skills de ejemplo, puedes modificarla
+    let skills = [
+        { name: "HTML", level: "Avanzado", icon: "fab fa-html5" },
+        { name: "CSS", level: "Avanzado", icon: "fab fa-css3-alt" },
+        { name: "JavaScript", level: "Avanzado", icon: "fab fa-js" },
+        { name: "SvelteKit", level: "Intermedio", icon: "si si-svelte" },
+        { name: "Node.js", level: "Intermedio", icon: "fab fa-node" },
+        { name: "Tailwind CSS", level: "Avanzado", icon: "si si-tailwindcss" }
     ];
 </script>
+<div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-12 border-b-4 border-cyan-400 inline-block pb-1">
+            Sobre Mí
+        </h1>
 
-<svelte:head>
-    <title>Sobre Mí | Leila</title>
-    </svelte:head>
-
-<div class="container py-12">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-8 border-b-4 border-primary inline-block pb-1">
-        Sobre Mí
-    </h1>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
-        <div class="md:col-span-1 flex flex-col items-center p-6 bg-secondary-bg rounded-xl shadow-lg">
-            
-            <div class="w-40 h-40 bg-gray-300 rounded-full mb-4 overflow-hidden border-4 border-primary shadow-xl flex items-center justify-center text-4xl text-white font-bold">
-                L
-            </div>
-            <h2 class="text-3xl font-bold text-gray-800">Leila</h2>
-            <p class="text-md text-gray-600 mb-4">Desarrolladora Web Full Stack</p>
-
-            <a href="/contact" class="bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md">
-                Contáctame
-            </a>
-        </div>
-
-        <div class="md:col-span-2">
-            
-            <section class="mb-10">
-                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Mi Historia y Trayectoria</h2>
-                <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                    ¡Hola! Soy Leila, una desarrolladora Full Stack especializada en la creación de aplicaciones web modernas, rápidas y escalables. Mi pasión se centra en el ecosistema **JavaScript**, con un enfoque en **SvelteKit** para el frontend y **Node.js/Express** para el backend.
-                </p>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Aporto una sólida experiencia en diseño UI/UX, utilizando Tailwind CSS para maquetar interfaces limpias y responsivas. Mi objetivo es transformar ideas complejas en soluciones digitales funcionales y atractivas.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Skills Técnicas</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    {#each skills as skill}
-                        <div class="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition duration-200">
-                            <i class="{skill.icon} text-primary text-xl"></i> 
-                            <div>
-                                <p class="text-md font-semibold text-gray-800">{skill.name}</p>
-                                <p class="text-sm text-gray-500">{skill.level}</p>
-                            </div>
-                        </div>
-                    {/each}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
+            <!-- Tarjeta lateral con foto -->
+            <div class="md:col-span-1 flex flex-col items-center p-8 bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700">
+                
+                <!-- Foto -->
+                <div class="w-44 h-44 rounded-full mb-6 overflow-hidden border-4 border-cyan-400 shadow-lg flex items-center justify-center transform hover:scale-105 transition duration-300">
+                    <img src="/Profile_Image.jpg" alt="Leila" class="w-full h-full object-cover" />
                 </div>
-            </section>
+
+                
+                <h2 class="text-3xl font-bold text-white mb-1">Leila</h2>
+                <p class="text-md text-gray-200 mb-6">Desarrolladora Web Full Stack</p>
+
+                <a href="/contact" class="bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transform hover:scale-105 transition duration-300 shadow-md">
+                    Contáctame
+                </a>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="md:col-span-2 flex flex-col justify-center space-y-6">
+                
+                <section class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md">
+                    <h2 class="text-3xl font-semibold text-white mb-4">Mi Historia y Trayectoria</h2>
+                    <p class="text-lg text-gray-200 leading-relaxed mb-4">
+                        ¡Hola! Soy Leila, una desarrolladora Full Stack especializada en la creación de aplicaciones web modernas, rápidas y escalables. Mi pasión se centra en el ecosistema <strong>JavaScript</strong>, con un enfoque en <strong>SvelteKit</strong> para el frontend y <strong>Node.js/Express</strong> para el backend.
+                    </p>
+                    <p class="text-lg text-gray-200 leading-relaxed">
+                        Aporto una sólida experiencia en diseño UI/UX, utilizando Tailwind CSS para maquetar interfaces limpias y responsivas. Mi objetivo es transformar ideas complejas en soluciones digitales funcionales y atractivas.
+                    </p>
+                </section>
+
+                <section class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md">
+                    <h2 class="text-3xl font-semibold text-white mb-4">Skills Técnicas</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        {#each skills as skill}
+                            <div class="flex items-center space-x-3 p-4 bg-gray-800/70 rounded-lg shadow-md border border-gray-600 hover:shadow-xl hover:bg-gray-700 transition duration-200">
+                                <i class="{skill.icon} text-cyan-400 text-xl"></i> 
+                                <div>
+                                    <p class="text-md font-semibold text-white">{skill.name}</p>
+                                    <p class="text-sm text-gray-200">{skill.level}</p>
+                                </div>
+                            </div>
+                        {/each}
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </div>

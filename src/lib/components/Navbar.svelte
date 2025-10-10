@@ -1,6 +1,6 @@
 <script>
     import { page } from '$app/stores';
-    import { slide } from 'svelte/transition'; // 🔑 ¡IMPORTANTE!
+    import { slide } from 'svelte/transition';
 
     const links = [
         { name: 'Inicio', path: '/' },
@@ -9,46 +9,48 @@
         { name: 'Contacto', path: '/contact' },
     ];
     
-    // Variable de estado para controlar si el menú móvil está abierto
     let isMenuOpen = false;
 
-    // Función para cerrar el menú (útil para móviles)
     function closeMenu() {
         isMenuOpen = false;
     }
 </script>
 
-<nav class="flex justify-between items-center py-5 px-5 sm:px-12 bg-white shadow-md sticky top-0 z-20">
+<!-- Navbar -->
+<nav class="flex justify-between items-center py-5 px-5 sm:px-12
+            bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700
+            shadow-md sticky top-0 z-30">
     <div class="logo z-30">
-        <a href="/" class="text-2xl font-bold text-gray-800 hover:text-primary transition-colors duration-300">
+        <a href="/" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300">
             MI PORTFOLIO
         </a>
     </div>
 
-    <div class="nav-links hidden md:flex space-x-8">
+    <!-- Links de escritorio -->
+    <div class="hidden md:flex space-x-8">
         {#each links as link}
             <a 
                 href={link.path}
                 on:click={closeMenu}
-                class:active={$page.url.pathname === link.path}
-                class="text-lg font-semibold text-gray-500 hover:text-primary transition-colors duration-300 relative group"
+                class="text-lg font-semibold text-gray-200 hover:text-cyan-400 transition-colors duration-300 relative group"
             >
                 {link.name}
                 <span 
                     class:active-indicator={$page.url.pathname === link.path} 
-                    class="absolute bottom-[-5px] left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+                    class="absolute bottom-[-5px] left-0 w-full h-[3px] bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
                 ></span>
             </a>
         {/each}
     </div>
-    
+
+    <!-- Botón menú móvil -->
     <button 
         class="md:hidden p-2 z-30 focus:outline-none" 
         on:click={() => isMenuOpen = !isMenuOpen}
         aria-label="Abrir menú de navegación"
     >
         <svg 
-            class="w-6 h-6 text-gray-800 transform transition duration-300" 
+            class="w-6 h-6 text-white transform transition duration-300" 
             class:rotate-90={isMenuOpen}
             fill="none" 
             stroke="currentColor" 
@@ -64,17 +66,17 @@
     </button>
 </nav>
 
+<!-- Menú móvil -->
 {#if isMenuOpen}
     <div 
-        class="fixed inset-0 top-0 bg-white z-20 pt-20 shadow-xl md:hidden flex flex-col items-center space-y-6"
-        transition:slide="{{ duration: 300 }}"
+        class="fixed inset-0 top-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 z-20 pt-20 shadow-xl md:hidden flex flex-col items-center space-y-6"
+        transition:slide={{ duration: 300 }}
     >
         {#each links as link}
             <a 
                 href={link.path}
                 on:click={closeMenu}
-                class:text-primary={$page.url.pathname === link.path}
-                class="text-3xl font-bold text-gray-800 hover:text-primary transition-colors duration-300 py-3"
+                class="text-3xl font-bold text-white hover:text-cyan-400 transition-colors duration-300 py-3"
             >
                 {link.name}
             </a>
@@ -83,8 +85,8 @@
 {/if}
 
 <style>
-    /* Asegura que el indicador de escritorio se vea cuando la página está activa */
+    /* Indicador activo en escritorio */
     .active-indicator {
-        transform: scaleX(1); 
+        transform: scaleX(1);
     }
 </style>
