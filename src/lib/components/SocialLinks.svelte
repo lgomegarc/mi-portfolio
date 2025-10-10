@@ -5,20 +5,30 @@
         { name: 'LinkedIn', icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4.088-3.262-4.088 0v5.604h-3v-11h3v1.765c1.396-2.586 7.088-2.77 7.088 2.583v6.652z"/></svg>' },
         // Puedes añadir más como X/Twitter, un Blog, etc.
     ];
+    const socialLinks = [
+        {
+            name: 'GitHub',
+            url: 'https://github.com/lgomegarc', // ✅ cambia este por tu usuario real
+            icon: 'fa-brands fa-github'
+        },
+        {
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/in/leila-begoña-gómez-garcía-27961425b', // ✅ cambia este por tu URL real
+            icon: 'fa-brands fa-linkedin'
+        }
+    ];
 </script>
 
 <div class="flex space-x-6">
-    {#each socialMedia as social}
+    {#each socialLinks as link}
         <a 
-            href="https://{social.name.toLowerCase()}.com/tu-perfil-leila" 
+            href={link.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            class="text-gray-600 hover:text-primary transition-colors duration-300"
-            aria-label={social.name}
+            class="text-gray-600 hover:text-primary transition transform hover:scale-110 duration-300"
+            aria-label={link.name}
         >
-            <div class="w-8 h-8" title={social.name}>
-                {@html social.icon}
-            </div>
+            <i class={link.icon + " text-3xl"}></i>
         </a>
     {/each}
 </div>

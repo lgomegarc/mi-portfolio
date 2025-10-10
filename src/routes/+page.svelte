@@ -1,5 +1,6 @@
 <script>
     import { quintOut } from 'svelte/easing';
+    import { fade, fly, blur } from 'svelte/transition';
 </script>
 
 <div class="flex items-center justify-center min-h-screen bg-secondary-bg px-4 sm:px-6 lg:px-8">
