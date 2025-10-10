@@ -49,3 +49,12 @@ body {
     outline-offset: 3px;
     border-radius: 4px;
 }
+
+:target {
+    /* Ajusta este valor (por ejemplo, 6rem o 80px) a la altura real de tu navbar */
+    scroll-margin-top: 5rem; /* Esto empujará el contenido hacia abajo */
+}
+
+html {
+    scroll-behavior: smooth;
+}

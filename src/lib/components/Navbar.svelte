@@ -1,14 +1,13 @@
 <script>
-    import { page } from '$app/stores';
     import { slide } from 'svelte/transition';
 
     const links = [
-        { name: 'Inicio', path: '/' },
-        { name: 'Sobre Mí', path: '/about' },
-        { name: 'Proyectos', path: '/projects' },
-        { name: 'Contacto', path: '/contact' },
+        { name: 'Inicio', path: '#home' },
+        { name: 'Sobre Mí', path: '#about' },
+        { name: 'Proyectos', path: '#projects' },
+        { name: 'Contacto', path: '#contact' },
     ];
-    
+
     let isMenuOpen = false;
 
     function closeMenu() {
@@ -21,7 +20,7 @@
             bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700
             shadow-md sticky top-0 z-30">
     <div class="logo z-30">
-        <a href="/" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300">
+        <a href="#home" class="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300">
             MI PORTFOLIO
         </a>
     </div>
@@ -36,7 +35,6 @@
             >
                 {link.name}
                 <span 
-                    class:active-indicator={$page.url.pathname === link.path} 
                     class="absolute bottom-[-5px] left-0 w-full h-[3px] bg-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
                 ></span>
             </a>
@@ -85,8 +83,7 @@
 {/if}
 
 <style>
-    /* Indicador activo en escritorio */
-    .active-indicator {
-        transform: scaleX(1);
+    html {
+        scroll-behavior: smooth; /* Scroll suave en todo el sitio */
     }
 </style>

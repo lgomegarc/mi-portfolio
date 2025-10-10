@@ -1,16 +1,13 @@
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+// svelte.config.js
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+import svelteSVG from 'vite-plugin-svelte-svg'; // O usa el formato sugerido por el error: import pkg from 'vite-plugin-svelte-svg'; const svelteSVG = pkg.svelteSVG;// <-- Importa esto
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-    // Consult https://kit.svelte.dev/docs/integrations#preprocessors
-    // for more information about preprocessors
-    preprocess: vitePreprocess(),
-
-    kit: {
-        // adapter-auto es ideal para desplegar en plataformas como Vercel o Netlify
-        adapter: adapter()
-    }
-};
-
-export default config;
+export default defineConfig({
+    plugins: [
+        svelteSVG({
+            svgo: true // Recomendado para optimizar el SVG
+        }),
+        sveltekit()
+    ]
+});

@@ -1,11 +1,13 @@
 <script>
+    import SpringIcon from '$lib/assets/springboot.svg?component'
     // Lista de skills de ejemplo, puedes modificarla
     let skills = [
+        { name: "Java", level: "Avanzado", icon: "fab fa-java" },
+        { name: "Spring Boot", level: "Avanzado", icon: SpringIcon },
         { name: "HTML", level: "Avanzado", icon: "fab fa-html5" },
         { name: "CSS", level: "Avanzado", icon: "fab fa-css3-alt" },
-        { name: "JavaScript", level: "Avanzado", icon: "fab fa-js" },
-        { name: "SvelteKit", level: "Intermedio", icon: "si si-svelte" },
-        { name: "Node.js", level: "Intermedio", icon: "fab fa-node" },
+        { name: "JavaScript", level: "Basico", icon: "fab fa-js" },
+        { name: "SvelteKit", level: "Basico", icon: "si si-svelte" },
         { name: "Tailwind CSS", level: "Avanzado", icon: "si si-tailwindcss" }
     ];
 </script>
