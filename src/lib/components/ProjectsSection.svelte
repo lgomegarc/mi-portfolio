@@ -5,13 +5,30 @@
     const allProjects = [
         // ... (Tu lista de proyectos aquí)
          {
-            title: 'Svelte Dashboard Analítico',
-            description: 'Un panel de control de datos en tiempo real...',
+            title: 'Portfolio',
+            description: 'Vida laboral y profesional',
             image: 'https://via.placeholder.com/350x200?text=Dashboard+UI',
             link: '#',
-            github: '#',
-            tags: ['SvelteKit', 'Chart.js', 'Tailwind']
+            github: 'https://github.com/lgomegarc/mi-portfolio',
+            tags: ['SvelteKit', 'Typescript', 'TailwindCSS']
         },
+         {
+            title: 'Soporte E-commerce Inditex',
+            description: 'Soporte a aplicaciones del grupo Inditex',
+            image: '/Jira.png',
+            link: '#',
+            github: '',
+            tags: ['DB2', 'Jira', 'Grafana', 'Confluence']
+        },
+         {
+            title: 'Mic-Prices',
+            description: 'Desarrollo de cero de un proyecto e-commerce con Spring Boot',
+            image: '/codigo.png',
+            link: '#',
+            github: 'https://github.com/lgomegarc/mic-prices/tree/main/mic-prices-develop/mic-prices-develop',
+            tags: ['Java', 'Spring Boot', 'Kafka', 'Spring JPA', 'React', 'TailwindCSS']
+        },
+
          // ... (más proyectos)
     ];
 </script>
