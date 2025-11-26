@@ -1,43 +1,41 @@
 <script>
-    // 1. IMPORTAMOS el componente Icon de Iconify
+    // 1. IMPORTAMOS las transiciones de Svelte
+    import { fly, fade } from 'svelte/transition';
+    
+    // 2. IMPORTAMOS el componente Icon de Iconify
     import Icon from '@iconify/svelte'; 
     
-    // Eliminamos: import SpringIcon from '$lib/assets/springBoot.svg?component'
-    // Eliminamos: // @ts-ignore
-    
-    // Lista de skills de ejemplo, usando nombres de iconos de Iconify
+    // Lista de skills
     let skills = [
-        // Usamos Devicon para Java (icono profesional)
         { name: "Java", level: "Avanzado", icon: "devicon-plain:java" }, 
-        
-        // CORREGIDO: Usamos el icono de Spring Boot de Devicon
         { name: "Spring Boot", level: "Avanzado", icon: "simple-icons:springboot" },
-        
-        // Uniformidad: HTML y CSS también con Devicon
         { name: "HTML", level: "Avanzado", icon: "devicon-plain:html5" },
         { name: "CSS", level: "Avanzado", icon: "devicon-plain:css3" },
         { name: "JavaScript", level: "Basico", icon: "devicon-plain:javascript" },
-        
-        // Uniformidad: SvelteKit y Tailwind CSS con Simple Icons
         { name: "SvelteKit", level: "Basico", icon: "simple-icons:svelte" },
         { name: "Tailwind CSS", level: "Avanzado", icon: "simple-icons:tailwindcss" }
     ];
 </script>
 
-<div class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 py-12 px-4 sm:px-6 lg:px-8">
+<div class="py-20 px-4 sm:px-6 lg:px-8">
     <div class="container mx-auto">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-12 border-b-4 border-cyan-400 inline-block pb-1">
+        <h1 
+            class="text-4xl sm:text-5xl font-extrabold text-white mb-12 border-b-4 border-cyan-400 inline-block pb-1"
+            in:fly={{ y: -30, duration: 600 }}
+        >
             Sobre Mí
         </h1>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
-            <div class="md:col-span-1 flex flex-col items-center p-8 bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700">
+            <div 
+                class="md:col-span-1 flex flex-col items-center p-8 bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700 h-fit"
+                in:fly={{ x: -50, duration: 800, delay: 200 }}
+            >
                 
                 <div class="w-44 h-44 rounded-full mb-6 overflow-hidden border-4 border-cyan-400 shadow-lg flex items-center justify-center transform hover:scale-105 transition duration-300">
-                    <img src="/Profile_Image.jpg" alt="Leila" class="w-full h-full object-cover" />
+                    <img src="/Profile_Image.jpg" alt="Leila" class="w-full h-full object-cover" /> 
                 </div>
 
-                
                 <h2 class="text-3xl font-bold text-white mb-1">Leila</h2>
                 <p class="text-md text-gray-200 mb-6">Desarrolladora Web Full Stack</p>
 
@@ -46,10 +44,13 @@
                 </a>
             </div>
 
-            <div class="md:col-span-2 flex flex-col justify-center space-y-6">
+            <div class="md:col-span-2 flex flex-col justify-center space-y-8">
                 
-                <section class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md">
-                    <h2 class="text-3xl font-semibold text-white mb-4">Mi Historia y Trayectoria</h2>
+                <section 
+                    class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md"
+                    in:fly={{ x: 50, duration: 800, delay: 400 }}
+                >
+                    <h2 class="text-3xl font-semibold text-cyan-400 mb-4">Mi Historia y Trayectoria</h2>
                     <p class="text-lg text-gray-200 leading-relaxed mb-4">
                         ¡Hola! Soy Leila, una desarrolladora Full Stack especializada en la creación de aplicaciones web modernas, rápidas y escalables. Mi pasión se centra en el ecosistema <strong>JavaScript</strong>, con un enfoque en <strong>SvelteKit</strong> para el frontend y <strong>Node.js/Express</strong> para el backend.
                     </p>
@@ -58,13 +59,16 @@
                     </p>
                 </section>
 
-                <section class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md">
-                    <h2 class="text-3xl font-semibold text-white mb-4">Skills Técnicas</h2>
+                <section 
+                    class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md"
+                    in:fade={{ duration: 1000, delay: 600 }}
+                >
+                    <h2 class="text-3xl font-semibold text-cyan-400 mb-4">Skills Técnicas</h2>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        {#each skills as skill}
-                            <div class="flex items-center space-x-3 p-4 bg-gray-800/70 rounded-lg shadow-md border border-gray-600 hover:shadow-xl hover:bg-gray-700 transition duration-200">
+                        {#each skills as skill (skill.name)}
+                            <div class="flex items-center space-x-3 p-4 bg-gray-800/70 rounded-lg shadow-md border border-gray-600 hover:shadow-xl hover:bg-gray-700 transition duration-200 transform hover:scale-[1.02]">
                                 
-                                <Icon icon={skill.icon} class="text-cyan-400 text-2xl" /> 
+                                <Icon icon={skill.icon} class="text-cyan-400 text-3xl" /> 
                                 <div>
                                     <p class="text-md font-semibold text-white">{skill.name}</p>
                                     <p class="text-sm text-gray-200">{skill.level}</p>

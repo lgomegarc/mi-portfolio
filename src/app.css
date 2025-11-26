@@ -12,9 +12,24 @@
 
 /* Aplica la fuente Poppins, color de texto y fondo (Sustituye @apply text-gray-700 bg-white;) */
 body {
+    /* Mantenemos tu fuente y color de texto */
     font-family: 'Poppins', sans-serif;
-    color: #4b5563; /* text-gray-700 */
-    background-color: #ffffff; /* bg-white */
+    color: #4b5563; 
+
+    /* [CAMBIOS CRÍTICOS] Configuración de la rejilla */
+    /* Fondo principal: Negro muy oscuro */
+    background-color: #111827; 
+    
+    /* Dibuja la rejilla con gradientes repetidos */
+    background-image: 
+        linear-gradient(to right, #2f3e4e 1px, transparent 1px),
+        linear-gradient(to bottom, #2f3e4e 1px, transparent 1px);
+    
+    /* Tamaño de cada celda de la rejilla */
+    background-size: 40px 40px; 
+
+    /* Aplica la animación */
+    animation: grid-pan 120s linear infinite; /* Animación lenta y constante */
 }
 
 /* Definición manual de .container (Sustituye @apply) */
@@ -57,4 +72,14 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* --- NUEVA ANIMACIÓN: GRADIENTE FLUIDO --- */
+@keyframes grid-pan {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100vw 100vh; /* Mueve el patrón 100% de la pantalla */
+    }
 }

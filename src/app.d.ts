@@ -2,6 +2,7 @@
 // for information about these interfaces
 declare global {
 	namespace App {
+
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
@@ -9,5 +10,6 @@ declare global {
 		// interface Platform {}
 	}
 }
+declare module '@emailjs/browser';
 
 export {};
