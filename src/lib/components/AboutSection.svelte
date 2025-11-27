@@ -1,83 +1,92 @@
 <script>
-    // 1. IMPORTAMOS las transiciones de Svelte
-    import { fly, fade } from 'svelte/transition';
-    
-    // 2. IMPORTAMOS el componente Icon de Iconify
-    import Icon from '@iconify/svelte'; 
-    
-    // Lista de skills
-    let skills = [
-        { name: "Java", level: "Avanzado", icon: "devicon-plain:java" }, 
-        { name: "Spring Boot", level: "Avanzado", icon: "simple-icons:springboot" },
-        { name: "HTML", level: "Avanzado", icon: "devicon-plain:html5" },
-        { name: "CSS", level: "Avanzado", icon: "devicon-plain:css3" },
-        { name: "JavaScript", level: "Basico", icon: "devicon-plain:javascript" },
-        { name: "SvelteKit", level: "Basico", icon: "simple-icons:svelte" },
-        { name: "Tailwind CSS", level: "Avanzado", icon: "simple-icons:tailwindcss" }
-    ];
+	// 1. IMPORTAMOS las transiciones de Svelte
+	import { fly, fade } from 'svelte/transition';
+
+	// 2. IMPORTAMOS el componente Icon de Iconify
+	import Icon from '@iconify/svelte';
+
+	// Lista de skills
+	let skills = [
+		{ name: 'Java', level: 'Avanzado', icon: 'devicon-plain:java' },
+		{ name: 'Spring Boot', level: 'Avanzado', icon: 'simple-icons:springboot' },
+		{ name: 'HTML', level: 'Avanzado', icon: 'devicon-plain:html5' },
+		{ name: 'CSS', level: 'Avanzado', icon: 'devicon-plain:css3' },
+		{ name: 'JavaScript', level: 'Basico', icon: 'devicon-plain:javascript' },
+		{ name: 'SvelteKit', level: 'Basico', icon: 'simple-icons:svelte' },
+        { name: 'Tailwind CSS', level: 'Basico', icon: 'simple-icons:tailwindcss' },
+        { name: 'Typescript', level: 'Basico', icon: 'simple-icons:typescript' }
+	];
 </script>
 
-<div class="py-20 px-4 sm:px-6 lg:px-8">
-    <div class="container mx-auto">
-        <h1 
-            class="text-4xl sm:text-5xl font-extrabold text-white mb-12 border-b-4 border-cyan-400 inline-block pb-1"
-            in:fly={{ y: -30, duration: 600 }}
-        >
-            Sobre Mí
-        </h1>
+<div class="px-4 py-20 sm:px-6 lg:px-8">
+	<div class="container mx-auto">
+		<h1
+			class="mb-12 inline-block border-b-4 border-cyan-400 pb-1 text-4xl font-extrabold text-white sm:text-5xl"
+			in:fly={{ y: -30, duration: 600 }}
+		>
+			Sobre Mí
+		</h1>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
-            <div 
-                class="md:col-span-1 flex flex-col items-center p-8 bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700 h-fit"
-                in:fly={{ x: -50, duration: 800, delay: 200 }}
-            >
-                
-                <div class="w-44 h-44 rounded-full mb-6 overflow-hidden border-4 border-cyan-400 shadow-lg flex items-center justify-center transform hover:scale-105 transition duration-300">
-                    <img src="/Profile_Image.jpg" alt="Leila" class="w-full h-full object-cover" /> 
-                </div>
+		<div class="mt-8 grid grid-cols-1 items-start gap-12 md:grid-cols-3 md:items-center">
+			<div
+				class="flex h-fit flex-col items-center rounded-2xl border border-gray-700 bg-gray-900/80 p-8 shadow-2xl backdrop-blur-md md:col-span-1"
+				in:fly={{ x: -50, duration: 800, delay: 200 }}
+			>
+				<div
+					class="mb-6 flex h-44 w-44 transform items-center justify-center overflow-hidden rounded-full border-4 border-cyan-400 shadow-lg transition duration-300 hover:scale-105"
+				>
+					<img src="/Profile_Image.jpg" alt="Leila" class="h-full w-full object-cover" />
+				</div>
 
-                <h2 class="text-3xl font-bold text-white mb-1">Leila</h2>
-                <p class="text-md text-gray-200 mb-6">Desarrolladora Web Full Stack</p>
+				<h2 class="mb-1 text-3xl font-bold text-white">Leila</h2>
+				<p class="text-md mb-6 text-gray-200">Desarrolladora Backend</p>
 
-                <a href="/contact" class="bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transform hover:scale-105 transition duration-300 shadow-md">
-                    Contáctame
-                </a>
-            </div>
+				<a
+					href="/contact"
+					class="transform rounded-lg bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-8 py-3 font-semibold text-white shadow-md transition duration-300 hover:scale-105 hover:opacity-90"
+				>
+					Contáctame
+				</a>
+			</div>
 
-            <div class="md:col-span-2 flex flex-col justify-center space-y-8">
-                
-                <section 
-                    class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md"
-                    in:fly={{ x: 50, duration: 800, delay: 400 }}
-                >
-                    <h2 class="text-3xl font-semibold text-cyan-400 mb-4">Mi Historia y Trayectoria</h2>
-                    <p class="text-lg text-gray-200 leading-relaxed mb-4">
-                        ¡Hola! Soy Leila, una desarrolladora Full Stack especializada en la creación de aplicaciones web modernas, rápidas y escalables. Mi pasión se centra en el ecosistema <strong>JavaScript</strong>, con un enfoque en <strong>SvelteKit</strong> para el frontend y <strong>Node.js/Express</strong> para el backend.
-                    </p>
-                    <p class="text-lg text-gray-200 leading-relaxed">
-                        Aporto una sólida experiencia en diseño UI/UX, utilizando Tailwind CSS para maquetar interfaces limpias y responsivas. Mi objetivo es transformar ideas complejas en soluciones digitales funcionales y atractivas.
-                    </p>
-                </section>
+			<div class="flex max-w-4xl flex-col justify-center space-y-8 md:col-span-2">
+				<section
+					class="rounded-xl border border-gray-700 bg-gray-900/80 p-6 shadow-lg backdrop-blur-md"
+					in:fly={{ x: 50, duration: 800, delay: 400 }}
+				>
+					<h2 class="mb-4 text-3xl font-semibold text-cyan-400">Mi Historia y Trayectoria</h2>
+					<p class="text-s mb-4 leading-relaxed text-gray-200 text-justify">
+						¡Hola! Soy Leila, una desarrolladora <strong>backend</strong>
+                        especializada en la creación de aplicaciones web robustas y escalables,
+                        principalmente con <strong>Java</strong> y <strong>Spring Boot</strong>.
+                        También tengo conocimientos básicos en <strong>TypeScript</strong>,
+                        <strong>Svelte</strong> y <strong>Tailwind CSS</strong> para complementar el desarrollo frontend.
+					</p>
+					<p class="text-s leading-relaxed text-gray-200 text-justify">
+						Me apasiona construir soluciones digitales que funcionen de manera eficiente y ordenada.
+                        Mi objetivo es transformar ideas en aplicaciones funcionales, manteniendo siempre un enfoque
+                        en buenas prácticas y escalabilidad.
+					</p>
+				</section>
 
-                <section 
-                    class="p-6 rounded-xl shadow-lg border border-gray-700 bg-gray-900/80 backdrop-blur-md"
-                    in:fade={{ duration: 1000, delay: 600 }}
-                >
-                    <h2 class="text-3xl font-semibold text-cyan-400 mb-4">Skills Técnicas</h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        {#each skills as skill (skill.name)}
-                            <div class="flex items-center space-x-3 p-4 bg-gray-800/70 rounded-lg shadow-md border border-gray-600 hover:shadow-xl hover:bg-gray-700 transition duration-200 transform hover:scale-[1.02]">
-                                
-                                <Icon icon={skill.icon} class="text-cyan-400 text-3xl" /> 
-                                <div>
-                                    <p class="text-md font-semibold text-white">{skill.name}</p>
-                                    <p class="text-sm text-gray-200">{skill.level}</p>
-                                </div>
-                            </div>
-                        {/each}
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
+				<section
+					class="rounded-xl border border-gray-700 bg-gray-900/80 p-6 shadow-lg backdrop-blur-md"
+					in:fade={{ duration: 1000, delay: 600 }}
+				>
+					<h2 class="mb-4 text-3xl font-semibold text-cyan-400">Skills técnicas</h2>
+					<div class="grid grid-cols-2 justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-4">
+						{#each skills as skill (skill.name)}
+							<div
+								class="flex h-36 w-36 transform flex-col items-center justify-center rounded-xl border border-gray-600 bg-gray-800/70 p-4 text-center shadow-md transition duration-200 hover:scale-[1.05] hover:bg-gray-700 hover:shadow-xl"
+							>
+								<Icon icon={skill.icon} class="mb-2 text-4xl text-cyan-400" />
+								<p class="text-md font-semibold text-white">{skill.name}</p>
+								<p class="text-sm text-gray-200">{skill.level}</p>
+							</div>
+						{/each}
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
 </div>

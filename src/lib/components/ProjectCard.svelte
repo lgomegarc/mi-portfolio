@@ -14,11 +14,11 @@
     }
 </script>
 
-<div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-cyan-500/50 transition duration-300 transform hover:-translate-y-1 border border-gray-700">
+<div class="bg-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-cyan-500/50 transition duration-300 transform hover:-translate-y-1 border border-gray-700 flex flex-col h-full">
     
     <img src={image} alt={`Captura de pantalla de ${title}`} class="w-full h-52 object-cover" />
     
-    <div class="p-6">
+    <div class="p-6 flex flex-col flex-1">
         <h3 class="text-2xl font-bold text-white mb-2">{title}</h3>
         
         <div class="flex flex-wrap gap-2 mb-4">
@@ -31,7 +31,7 @@
             {/if}
         </div>
 
-        <p class="text-gray-400 mb-5">{description}</p>
+        <p class="text-gray-400 mb-5 flex-1">{description}</p>
         
         <div class="flex space-x-4">
             <a 
