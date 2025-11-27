@@ -1,15 +1,22 @@
 /* src/app.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 /* 1. DIRECTIVAS DE TAILWIND (NO deben ser modificadas) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 2. FUENTES (@import url) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 
 /* 3. ESTILOS GLOBALES (SIN @apply) */
-
+@keyframes grid-pan {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100vw 100vh; /* Mueve el patrón 100% de la pantalla */
+    }
+}
 /* Aplica la fuente Poppins, color de texto y fondo (Sustituye @apply text-gray-700 bg-white;) */
 body {
     /* Mantenemos tu fuente y color de texto */
@@ -75,11 +82,4 @@ html {
 }
 
 /* --- NUEVA ANIMACIÓN: GRADIENTE FLUIDO --- */
-@keyframes grid-pan {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100vw 100vh; /* Mueve el patrón 100% de la pantalla */
-    }
-}
+

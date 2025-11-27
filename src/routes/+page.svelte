@@ -6,7 +6,7 @@
     import ContactSection from '$lib/components/ContactSection.svelte';
     import ProjectsSection from '$lib/components/ProjectsSection.svelte';
 
-    // ¡Ya no necesitamos código de partículas aquí!
+
 </script>
 
 <div class="relative min-h-screen overflow-hidden" id="home">
