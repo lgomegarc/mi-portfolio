@@ -8,28 +8,34 @@
         // Asegúrate de que tus imágenes estén en la carpeta /static
         {
             title: 'Portfolio',
-            description: 'Vida laboral y profesional',
+            description: 'Web que describe los proyectos en los que he trabajado y mi formación profesional.',
             // image: 'https://via.placeholder.com/350x200?text=Portfolio', // URL de ejemplo, usa una local
             image: '/portfolio.png', // URL de imagen de ejemplo
             link: '#',
             github: 'https://github.com/lgomegarc/mi-portfolio',
-            tags: ['SvelteKit', 'Typescript', 'TailwindCSS']
+            tags: ['SvelteKit', 'Typescript', 'TailwindCSS'],
+            disableLink: false,       
+            disableGithub: false
         },
          {
-            title: 'Soporte E-commerce Inditex',
-            description: 'Soporte a aplicaciones del grupo Inditex',
+            title: 'Soporte E-commerce',
+            description: 'Soporte a aplicaciones y páginas web del grupo Inditex ',
             image: '/Jira.png',
             link: '#',
             github: '',
-            tags: ['DB2', 'Jira', 'Grafana', 'Confluence']
+            tags: ['DB2', 'Jira', 'Grafana', 'Confluence'],
+            disableLink: true,       
+            disableGithub: true
         },
          {
             title: 'Mic-Prices',
-            description: 'Desarrollo de cero de un proyecto e-commerce con Spring Boot',
+            description: 'Desarrollo de cero de un proyecto e-commerce con Spring Boot.',
             image: '/codigo.png',
             link: '#',
             github: 'https://github.com/lgomegarc/mic-prices/tree/main/mic-prices-develop/mic-prices-develop',
-            tags: ['Java', 'Spring Boot', 'Kafka', 'Spring JPA', 'React', 'TailwindCSS']
+            tags: ['Java', 'Spring Boot', 'Kafka', 'Spring JPA', 'React', 'TailwindCSS'],
+            disableLink: true,        
+            disableGithub: false
         },
     ];
 </script>

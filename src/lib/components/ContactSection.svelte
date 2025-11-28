@@ -44,7 +44,7 @@
 	}
 </script>
 
-<div class="container mx-auto">
+<div class="container mx-auto mb-8">
 	<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
 		<!-- Datos de contacto -->
 		<div

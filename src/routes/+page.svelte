@@ -19,7 +19,7 @@
             </h1>
             <p class="text-xl sm:text-2xl max-w-2xl mx-auto mb-10 text-gray-200"
                 in:fly={{ y: 30, duration: 1000, delay: 500, easing: quintOut }}>
-                Bienvenido a mi portafolio. Aquí muestro mis **proyectos**, **habilidades** y el camino que sigo como desarrolladora backend.
+                Bienvenido a mi portafolio. Aquí muestro mis <a href="#projects" class="text-cyan-400">proyectos</a>, <a href="#about" class="text-cyan-400">habilidades</a> y el camino que sigo como desarrolladora backend.
             </p>
             <a href="#about" 
                 class="inline-block px-8 py-3 font-semibold rounded-lg shadow-lg
