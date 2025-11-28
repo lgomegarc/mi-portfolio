@@ -10,7 +10,7 @@
             title: 'Portfolio',
             description: 'Web que describe los proyectos en los que he trabajado y mi formación profesional.',
             // image: 'https://via.placeholder.com/350x200?text=Portfolio', // URL de ejemplo, usa una local
-            image: '/portfolio.png', // URL de imagen de ejemplo
+            image: '/Portfolio.png', // URL de imagen de ejemplo
             link: '#',
             github: 'https://github.com/lgomegarc/mi-portfolio',
             tags: ['SvelteKit', 'Typescript', 'TailwindCSS'],
@@ -40,22 +40,16 @@
     ];
 </script>
 
-<div class="py-20 px-4 sm:px-6 lg:px-8"> 
+<div class="mt-10 px-4 sm:px-6 lg:px-8 mb-20"> 
     <div class="container mx-auto">
         
         <h1 
-            class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-white"
+            class="inline-block border-b-4 border-cyan-400 pb-1 text-4xl font-extrabold text-white sm:text-5xl mb-10"
             in:fly={{ y: -30, duration: 600 }}
         >
             Proyectos
         </h1>
-        
-        <p 
-            class="text-xl text-center text-gray-300 mb-12 max-w-3xl mx-auto"
-            in:fade={{ duration: 800, delay: 200 }}
-        >
-            Estos son los proyectos en los que he trabajado
-         </p>
+
 
          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
              {#each allProjects as project, i (project.title)}

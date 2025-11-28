@@ -18,16 +18,16 @@
 	];
 </script>
 
-<div class="px-4 py-20 sm:px-6 lg:px-8">
+<div class="px-4 sm:px-6 lg:px-8">
 	<div class="container mx-auto">
 		<h1
-			class="mb-12 inline-block border-b-4 border-cyan-400 pb-1 text-4xl font-extrabold text-white sm:text-5xl"
+			class="inline-block border-b-4 border-cyan-400 pb-1 text-4xl font-extrabold text-white sm:text-5xl"
 			in:fly={{ y: -30, duration: 600 }}
 		>
 			Sobre Mí
 		</h1>
 
-		<div class="mt-8 grid grid-cols-1 items-start gap-12 md:grid-cols-3 md:items-center">
+		<div class="mt-4 grid grid-cols-1 items-start gap-12 md:grid-cols-3 md:items-center">
 			<div
 				class="flex h-fit flex-col items-center rounded-2xl border border-gray-700 bg-gray-900/80 p-8 shadow-2xl backdrop-blur-md md:col-span-1"
 				in:fly={{ x: -50, duration: 800, delay: 200 }}
