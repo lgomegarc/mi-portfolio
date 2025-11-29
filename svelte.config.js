@@ -1,8 +1,11 @@
-// svelte.config.js
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
-export default defineConfig({
-    plugins: [
-        sveltekit()
-    ]
-});
+import adapter from '@sveltejs/adapter-vercel';
+import preprocess from 'svelte-preprocess';
+
+export default {
+  preprocess: preprocess({
+    typescript: { transpileOnly: true }
+  }),
+  kit: {
+    adapter: adapter()
+  }
+};
