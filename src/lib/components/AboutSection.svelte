@@ -42,7 +42,7 @@
 				<p class="text-md mb-6 text-gray-200">Desarrolladora Backend</p>
 
 				<a
-					href="/contact"
+					href="#contact"
 					class="transform rounded-lg bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 px-8 py-3 font-semibold text-white shadow-md transition duration-300 hover:scale-105 hover:opacity-90"
 				>
 					Contáctame
