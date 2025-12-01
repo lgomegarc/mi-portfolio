@@ -57,8 +57,7 @@
 					<h2 class="mb-4 text-3xl font-semibold text-cyan-400">Mi Historia y Trayectoria</h2>
 					<p class="text-s mb-4 leading-relaxed text-gray-200 text-justify">
 						¡Hola! Soy Leila, una desarrolladora <strong>backend</strong>
-                        especializada en la creación de aplicaciones web robustas y escalables,
-                        principalmente con <strong>Java</strong> y <strong>Spring Boot</strong>.
+                        especializada principalmente en <strong>Java</strong> y <strong>Spring Boot</strong>.
                         También tengo conocimientos básicos en <strong>TypeScript</strong>,
                         <strong>Svelte</strong> y <strong>Tailwind CSS</strong> para complementar el desarrollo frontend.
 					</p>
